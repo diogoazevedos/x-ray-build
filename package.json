@@ -1,7 +1,7 @@
 {
-  "name": "x-ray-draft",
+  "name": "x-ray-build",
   "version": "1.0.0",
-  "description": "A helper that drafts a x-ray based on a scheme",
+  "description": "A helper that build a x-ray based on a schema",
   "main": "index.js",
   "scripts": {
     "test": "eslint . --ext .js"
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diogoazevedos/x-ray-draft.git"
+    "url": "git+https://github.com/diogoazevedos/x-ray-build.git"
   },
   "keywords": [
     "scraper",
@@ -28,7 +28,7 @@
   "author": "Diogo Azevedo <diogoazevedos@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/diogoazevedos/x-ray-draft/issues"
+    "url": "https://github.com/diogoazevedos/x-ray-build/issues"
   },
-  "homepage": "https://github.com/diogoazevedos/x-ray-draft#readme"
+  "homepage": "https://github.com/diogoazevedos/x-ray-build#readme"
 }
