@@ -6,6 +6,10 @@
   "scripts": {
     "test": "eslint . --ext .js"
   },
+  "dependencies": {
+    "lodash": "4.17.*",
+    "ramda": "0.24.*"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
