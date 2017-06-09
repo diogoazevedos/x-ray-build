@@ -1,0 +1,22 @@
+{
+  "name": "x-ray-draft",
+  "version": "1.0.0",
+  "description": "A helper that drafts a x-ray based on a scheme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoazevedos/x-ray-draft.git"
+  },
+  "keywords": [
+    "scraper",
+    "scheme",
+    "x-ray",
+    "structure"
+  ],
+  "author": "Diogo Azevedo <diogoazevedos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogoazevedos/x-ray-draft/issues"
+  },
+  "homepage": "https://github.com/diogoazevedos/x-ray-draft#readme"
+}
