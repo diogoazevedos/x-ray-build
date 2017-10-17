@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "lodash": "4.17.*",
-    "ramda": "0.24.*"
+    "ramda": "0.25.*"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.3.0"
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
   },
   "repository": {
     "type": "git",
