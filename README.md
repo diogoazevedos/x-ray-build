@@ -1,4 +1,5 @@
 # x-ray-build
+[![Build Status](https://travis-ci.org/diogoazevedos/x-ray-build.svg?branch=master)](https://travis-ci.org/diogoazevedos/x-ray-build)
 
 A helper that build a [x-ray](https://github.com/lapwinglabs/x-ray) based on a schema.
 
