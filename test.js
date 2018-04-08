@@ -2,41 +2,41 @@ const test = require('ava');
 const build = require('./');
 
 test('should all params be defined', (t) => {
-  const x = (source, context, selector) => {
-    t.is(source, 'source');
-    t.is(context, 'context');
-    t.is(selector, 'selector');
+  const x = ($source, $context, $selector) => {
+    t.is($source, 'https://github.com/diogoazevedos');
+    t.is($context, '[itemscope]');
+    t.is($selector, '.vcard-fullname');
   };
 
   build(x, {
-    $source: 'source',
-    $context: 'context',
-    $selector: 'selector',
+    $source: 'https://github.com/diogoazevedos',
+    $context: '[itemscope]',
+    $selector: '.vcard-fullname',
   });
 });
 
-test('should the source be `null`', (t) => {
-  const x = (source, context, selector) => {
-    t.is(source, null);
-    t.is(context, 'context');
-    t.is(selector, 'selector');
+test('should the source be null and all others be defined', (t) => {
+  const x = ($source, $context, $selector) => {
+    t.is($source, null);
+    t.is($context, '[itemscope]');
+    t.is($selector, '.vcard-fullname');
   };
 
   build(x, {
-    $context: 'context',
-    $selector: 'selector',
+    $context: '[itemscope]',
+    $selector: '.vcard-fullname',
   });
 });
 
-test('should the context be `null`', (t) => {
-  const x = (source, context, selector) => {
-    t.is(source, 'source');
-    t.is(context, null);
-    t.is(selector, 'selector');
+test('should the context be null and all others be defined', (t) => {
+  const x = ($source, $context, $selector) => {
+    t.is($source, 'https://github.com/diogoazevedos');
+    t.is($context, null);
+    t.is($selector, '.vcard-fullname');
   };
 
   build(x, {
-    $source: 'source',
-    $selector: 'selector',
+    $source: 'https://github.com/diogoazevedos',
+    $selector: '.vcard-fullname',
   });
 });
