@@ -4,16 +4,19 @@
   "description": "A helper that build a x-ray based on a schema",
   "main": "index.js",
   "scripts": {
-    "test": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "test": " nyc ava"
   },
   "dependencies": {
     "lodash": "4.17.*",
     "ramda": "0.25.*"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "nyc": "^11.6.0"
   },
   "repository": {
     "type": "git",
