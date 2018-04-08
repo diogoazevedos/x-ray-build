@@ -1,33 +1,51 @@
-/* eslint-disable no-use-before-define, no-underscore-dangle */
+/* eslint-disable no-use-before-define */
 
-const R = require('ramda');
-const _ = require('lodash');
+const { isPlainObject } = require('lodash');
+const {
+  curry,
+  compose,
+  view,
+  over,
+  complement,
+  isNil,
+  lensIndex,
+  lensProp,
+  __,
+  defaultTo,
+  all,
+  anyPass,
+  cond,
+  map,
+  T,
+  identity,
+  converge,
+} = require('ramda');
 
-const viewThrough = R.curry((lens, f) => R.compose(R.view(lens), R.over(lens, f)));
-const isNotNil = R.complement(R.isNil);
+const viewThrough = curry((lens, f) => compose(view(lens), over(lens, f)));
+const isNotNil = complement(isNil);
 
-const headLens = R.lensIndex(0);
-const sourceLens = R.lensProp('$source');
-const contextLens = R.lensProp('$context');
-const selectorLens = R.lensProp('$selector');
+const headLens = lensIndex(0);
+const sourceLens = lensProp('$source');
+const contextLens = lensProp('$context');
+const selectorLens = lensProp('$selector');
 
-const viewDefaultNil = viewThrough(R.__, R.defaultTo(null));
-const isArrayOfPlainObject = R.all(_.isPlainObject);
+const viewDefaultNil = viewThrough(__, defaultTo(null));
+const isArrayOfPlainObject = all(isPlainObject);
 
-const isBlueprintObject = R.anyPass([
+const isBlueprintObject = anyPass([
   viewThrough(sourceLens, isNotNil),
   viewThrough(contextLens, isNotNil),
   viewThrough(selectorLens, isNotNil),
 ]);
 
-const resolve = R.curry((f, x) => R.cond([
+const resolve = curry((f, x) => cond([
   [isBlueprintObject, build(f)],
-  [_.isPlainObject, R.map(resolve(f))],
-  [isArrayOfPlainObject, R.over(headLens, resolve(f))],
-  [R.T, R.identity],
+  [isPlainObject, map(resolve(f))],
+  [isArrayOfPlainObject, over(headLens, resolve(f))],
+  [T, identity],
 ])(x));
 
-const build = R.curry((f, x) => R.converge(f, [
+const build = curry((f, x) => converge(f, [
   viewDefaultNil(sourceLens),
   viewDefaultNil(contextLens),
   viewThrough(selectorLens, resolve(f)),
