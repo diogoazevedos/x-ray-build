@@ -12,9 +12,13 @@ script:
 after_success:
   - npm run cover
 
-deploy:
-  - provider: npm
-    email: $NPM_EMAIL
-    api_key: $NPM_API_KEY
-    on:
-      tags: true
+jobs:
+  include:
+    - stage: publish
+      node_js: 8
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_API_KEY
+        on:
+          tags: true
