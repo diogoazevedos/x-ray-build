@@ -13,7 +13,9 @@ npm install x-ray-build
 ```js
 const x = require('x-ray');
 const build = require('x-ray-build');
-const crawl = build(x, {
+
+const drive = x();
+const crawl = build(drive, {
   $source: 'https://github.com/diogoazevedos',
   $context: '[itemscope]',
   $selector: {
